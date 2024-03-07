@@ -9,7 +9,7 @@
           Hieu.
         </h3>
 
-        <span class="home-banner__welcome">Frontend Developer</span>
+        <span class="home-banner__welcome">Web Frontend</span>
       </div>
     </div>
     <span class="shape shape-1">

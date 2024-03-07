@@ -48,6 +48,10 @@
         font-weight: 700;
         text-transform: uppercase;
       }
+
+      p {
+        white-space: pre-wrap;
+      }
     }
 
     &__year {
@@ -156,6 +160,7 @@
 
       &__year {
         order: 3;
+        margin-top: 15px;
       }
 
       &__icon {

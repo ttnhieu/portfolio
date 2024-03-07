@@ -3,8 +3,8 @@
     <div class="page-highlight s-container--spacing px-lg-16 px-0">
       <HeaderPageHorizontal
         title="Experience"
-        subTitle="Creative Timeline"
-        description="Fusce sollicitudin eros id ex maximus gravida non vitae ante. Cras ac mi a dolor suscipit rutrum ut vitae mi."
+        subTitle="Experience Timeline"
+        description="I've had the opportunity to expand my knowledge and skills through projects. Here's a glimpse of the things I've completed along my learning journey."
       />
       <div class="timeline px-4">
         <span class="timeline__line"></span>
@@ -51,42 +51,41 @@ import  AOS  from '@/assets/js/aos';
   },
 })
 export default class ExperienceComponent extends Vue {
-  pageTitle = 'Popular Products';
   experiences: any[] = [];
   data = [
     {
       id: 1,
-      title: 'UI/UX Designer',
-      sub_title: 'WORK AT ENVATO',
-      description:'Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.',
-      time: 'Aug 2021 - Feb 2022',
+      title: 'Frontend Developer',
+      sub_title: 'DGWA',
+      description:'Development of new features, Maintenance of previous features and functionalities.',
+      time: 'Jun 2023 - Present',
       image_url: require('@/assets/images/1.jpg'),
       icon_url: require('@/assets/images/be.svg'),
     },
     {
       id: 2,
-      title: 'UI/UX Designer',
-      sub_title: 'WORK AT ENVATO',
-      description:'Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.',
-      time: 'Mar 2022 - May 2022',
+      title: 'Frontend Developer',
+      sub_title: 'Neolab',
+      description:'Development of websites, templates and new features based on VueJS, NuxtJS and TypeScript, JavaScript, HTML and SCSS.',
+      time: 'Apr 2020 - Jun 2023',
+      image_url: require('@/assets/images/1.jpg'),
+      icon_url: require('@/assets/images/be.svg'),
+    },
+    {
+      id: 3,
+      title: 'Frontend Developer',
+      sub_title: 'Neolab',
+      description:'Conception and frontend development of the business model. \nProgramming with Angular Framework and TypeScript, Design with HTML and SCSS.',
+      time: 'Jun 2018 - Apr 2020',
       image_url: require('@/assets/images/2.jpg'),
       icon_url: require('@/assets/images/dribbble.svg'),
     },
     {
-      id: 3,
-      title: 'UI/UX Designer',
-      sub_title: 'WORK AT ENVATO',
-      description:'Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.',
-      time: 'Sep 2022 - Present',
-      image_url: require('@/assets/images/3.jpg'),
-      icon_url: require('@/assets/images/instagram.svg'),
-    },
-    {
       id: 4,
-      title: 'UI/UX Designer',
-      sub_title: 'WORK AT ENVATO',
-      description:'Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.',
-      time: 'Sep 2022 - Present',
+      title: 'Web Development Intern',
+      sub_title: 'Neolab',
+      description:'Developed Responsive Static Website. \nTechnologies: HTML, CSS, Bootstrap, JQuery, Git, Bitbucket.',
+      time: 'Dec 2017 - Jun 2018',
       image_url: require('@/assets/images/3.jpg'),
       icon_url: require('@/assets/images/instagram.svg'),
     },

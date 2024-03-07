@@ -1,6 +1,11 @@
 <template>
   <div class="home-projects s-container s-container--spacing px-0" id="project">
-    <HeaderPage :title="pageTitle" />
+    <div class="page-title mb-12 px-4">
+      <h3 class="mb-5 title-font">Latest Projects</h3>
+      <!-- <p class="mb-0">This is a list of previous projects of work.</p> -->
+      <p class="mb-0">Here are some of my selected projects worth sharing.</p>
+    </div>
+
     <v-row
       no-gutters
     >
@@ -31,52 +36,30 @@ import { aosDelay } from '@/shared/utils/helper';
   name: 'ProjectsComponent',
   components: {
     CardPost: LazyLoadService.loadComponent('CardPost'),
-    HeaderPage: LazyLoadService.loadComponent('HeaderPage'),
   },
 })
 export default class ProjectsComponent extends Vue {
   pageTitle = 'New Arrival';
   products: Product[] = [];
   data = [
-    // {
-    //   id: 1,
-    //   category: 'Youtube',
-    //   title: 'Drawing Art',
-    //   image_url: require('@/assets/images/1.jpg'),
-    //   route_name: 'TodoPage',
-    // },
-    // {
-    //   id: 2,
-    //   category: 'Vimeo',
-    //   title: 'Lafayette Fly',
-    //   image_url: require('@/assets/images/2.jpg'),
-    //   route_name: 'TodoPage',
-    // },
-    // {
-    //   id: 3,
-    //   category: 'Vimeo',
-    //   title: 'Lafayette Fly',
-    //   image_url: require('@/assets/images/3.jpg'),
-    //   route_name: 'TodoPage',
-    // },
     {
-      id: 6,
+      id: 1,
       title: 'Todo List',
-      description: 'Create a "to-do list" to organize and prioritize your tasks',
+      description: 'Create a "to-do list" to organize and prioritize your tasks.',
       image_url: require('@/assets/images/6.jpg'),
       route_name: 'TodoPage',
     },
     {
-      id: 4,
+      id: 2,
       title: 'Job Listings with Filtering',
-      description: 'Job Listing with Filtering that lists available jobs that can be filtered ',
+      description: 'Job Listing with Filtering that lists available jobs that can be filtered.',
       image_url: require('@/assets/images/4.jpg'),
       route_name: 'JobListingPage',
     },
     {
-      id: 5,
+      id: 3,
       title: 'Weather App',
-      description: 'A weather application is a digital tool that provides users with real-time weather information and forecast.',
+      description: 'Weather information and forecast.',
       image_url: require('@/assets/images/5.jpg'),
       route_name: 'WeatherPage',
     },
@@ -92,3 +75,20 @@ export default class ProjectsComponent extends Vue {
   }
 }
 </script>
+<style lang="scss">
+.page-title {
+  max-width: 550px;
+  margin: auto;
+
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 27px;
+    }
+  }
+}
+</style>

@@ -29,8 +29,13 @@
   }
 }
 
+.title-font {
+  font-family: 'Inter';
+  font-weight: 700;
+}
+
 .theme--light.v-sheet {
-  color: var(--main-color);
+  color: var(--main-color) !important;
   font-size: 14px;
   line-height: 30px;
 

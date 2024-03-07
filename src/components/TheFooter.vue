@@ -13,6 +13,7 @@
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
           data-aos-duration="1000"
+          class="title-font"
         >
           I want to hear from <br/>you please
           <a href="" class="contact_link">contact me!</a>
@@ -23,7 +24,7 @@
           data-aos-anchor-placement="top-bottom"
           data-aos-duration="1000"
         >
-          <span class="contact-item email">infomaya.tonni@gmail.com</span>
+          <span class="contact-item email">ttn.hieu.44@gmail.com</span>
           <div class="contact-item text-lg-center">
             <img class="icon" src="@/assets/images/vector3.svg" alt="">
           </div>
@@ -39,7 +40,8 @@
                 <img src="@/assets/images/instagram-stroke.svg" alt="">
               </span>
             </div>
-            <p class="mb-0 text-lg-center">© {{ new Date().getFullYear() }} — All rights reserved.</p>
+            <p class="mb-0 text-lg-center">© {{ new Date().getFullYear() }} Hieu Tran.</p>
+            <!-- <p class="mb-0 text-lg-center">Made with ❤ by Hieu</p> -->
           </div>
         </div>
       </div>
@@ -63,7 +65,7 @@ export default class TheFooterComponent extends Vue {
   background-image: url('../assets/images/vector.svg'), url('../assets/images/vector2.svg') !important;
   background-position: -30px bottom, calc(100% + 60px) bottom;
   background-color: var(--extra-color) !important;
-  color: #fff;
+  color: #fff !important;
   width: 100%;
 
   h3 {

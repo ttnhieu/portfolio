@@ -2,7 +2,7 @@
   <div class="page-title-horizontal d-flex px-4">
     <div class="main-title">
       <span>{{ title }}</span>
-      <h3>{{ subTitle }}</h3>
+      <h3 class="title-font">{{ subTitle }}</h3>
     </div>
     <p class="mb-0 mt-4 mt-lg-0 description">
       {{ description }}

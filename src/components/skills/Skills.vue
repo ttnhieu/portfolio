@@ -2,9 +2,9 @@
   <div class="home-skills s-container px-0 pt-0" id="skill">
     <div class="page-highlight s-container--spacing px-lg-16 px-0">
       <HeaderPageHorizontal
-        title="Our Services"
+        title="My Skills"
         subTitle="What Can I Do"
-        description="Fusce sollicitudin eros id ex maximus gravida non vitae ante. Cras ac mi a dolor suscipit rutrum ut vitae mi."
+        description="Here are some of my skills, on which I have worked."
       />
 
       <v-row
@@ -12,10 +12,10 @@
         class="home-skills__list"
       >
         <v-col
-          v-for="(item, index) in products"
-          sm="6" lg="3"
-          cols="12"
-          class="px-4 mb-10 mb-lg-0 home-skills__item"
+          v-for="(item, index) in skills"
+          sm="4" lg="3"
+          cols="6"
+          class="px-4 mb-10 mb-lg-8 home-skills__item d-flex align-center"
           data-aos="fade-up"
           :key="item.id"
           :data-aos-delay="aosDelayTime(index)"
@@ -23,14 +23,9 @@
         >
           <img :src="item.image_url" alt="">
 
-          <div class="home-skills__item-title mb-8">
-            <h3>UI/UX Designer</h3>
-            <span>Work At Envato</span>
+          <div class="home-skills__item-title ml-3">
+            {{ item.name }}
           </div>
-
-          <p class="home-skills__text mb-0">
-            Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.
-          </p>
         </v-col>
       </v-row>
       <div class="shape">
@@ -44,7 +39,7 @@
 import { Vue, Component } from 'vue-property-decorator';
 import LazyLoadService from '@/shared/utils/lazy-load.service';
 import { Product } from '@/shared/models/product';
-import { sliceArray, aosDelay } from '@/shared/utils/helper';
+import { aosDelay } from '@/shared/utils/helper';
 
 @Component({
   name: 'SkillsComponent',
@@ -53,39 +48,94 @@ import { sliceArray, aosDelay } from '@/shared/utils/helper';
   },
 })
 export default class SkillsComponent extends Vue {
-  pageTitle = 'Popular Products';
+  time = 1000;
   products: Product[] = [];
-  data = [
+  skills = [
     {
       id: 1,
-      name: 'UI/UX Designer',
-      description: 'WORK AT ENVATO',
-      content:'Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.',
-      image_url: require('@/assets/images/layer.svg'),
+      name: 'HTML',
+      // image_url: require('@/assets/images/skill-html.svg'),
+      image_url: require('@/assets/images/skill-html-simple-2.svg'),
     },
     {
       id: 2,
-      name: 'Graphic Design',
-      description: 'WORK AT FREEPIC',
-      content:'Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.',
-      image_url: require('@/assets/images/design.svg'),
+      name: 'CSS',
+      // image_url: require('@/assets/images/skill-css.svg'),
+      image_url: require('@/assets/images/skill-css-simple.svg'),
     },
     {
       id: 3,
-      name: 'Digital Marketing',
-      description: 'WORK AT FIVERR',
-      content:'Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.',
-      image_url: require('@/assets/images/marketing.svg'),
+      name: 'SASS',
+      // image_url: require('@/assets/images/skill-scss.svg'),
+      image_url: require('@/assets/images/skill-scss-simple.svg'),
     },
     {
       id: 4,
-      name: 'Mobile Application',
-      description: 'WORK AT APPLE',
-      content:'Nunc hendrerit, justo vel ultricieselei fen pretium leo, ac finibus nulla eros consect viverra neque rutrum.',
-      image_url: require('@/assets/images/apps.svg'),
+      name: 'Bootstrap',
+      // image_url: require('@/assets/images/skill-bootstrap.svg'),
+      image_url: require('@/assets/images/skill-bootstrap-simple.svg'),
+    },
+    {
+      id: 5,
+      name: 'Tailwind',
+      // image_url: require('@/assets/images/skill-tailwind.svg'),
+      image_url: require('@/assets/images/skill-tailwind-simple.svg'),
+    },
+    {
+      id: 6,
+      name: 'Ant design',
+      // image_url: require('@/assets/images/skill-ant.svg'),
+      image_url: require('@/assets/images/skill-ant-simple.svg'),
+    },
+    {
+      id: 7,
+      name: 'Vuetify',
+      // image_url: require('@/assets/images/skill-vuetify.svg'),
+      image_url: require('@/assets/images/skill-vuetify-simple.svg'),
+    },
+    {
+      id: 8,
+      name: 'Javascript',
+      // image_url: require('@/assets/images/skill-js.svg'),
+      image_url: require('@/assets/images/skill-js-simple.svg'),
+    },
+    {
+      id: 9,
+      name: 'Typescript',
+      // image_url: require('@/assets/images/skill-js.svg'),
+      image_url: require('@/assets/images/skill-ts-simple.svg'),
+    },
+    {
+      id: 10,
+      name: 'Nodejs',
+      // image_url: require('@/assets/images/skill-node.svg'),
+      image_url: require('@/assets/images/skill-node-simple.svg'),
+    },
+    {
+      id: 11,
+      name: 'Angular',
+      // image_url: require('@/assets/images/skill-angular.svg'),
+      image_url: require('@/assets/images/skill-angular-simple.svg'),
+    },
+    {
+      id: 12,
+      name: 'Vuejs',
+      // image_url: require('@/assets/images/skill-vue.svg'),
+      image_url: require('@/assets/images/skill-vue-simple.svg'),
+    },
+    {
+      id: 13,
+      name: 'Nuxtjs',
+      // image_url: require('@/assets/images/skill-nuxt.svg'),
+      image_url: require('@/assets/images/skill-nuxt-simple.svg'),
+    },
+    {
+      id: 14,
+      name: 'Git',
+      // image_url: require('@/assets/images/skill-git.svg'),
+      image_url: require('@/assets/images/skill-git-simple.svg'),
     },
   ];
-  time = 1000;
 
   aosDuration(index: number) {
     return 500 * index;
@@ -94,11 +144,6 @@ export default class SkillsComponent extends Vue {
   aosDelayTime(index: number) {
     const arr = aosDelay(this.products.length);
     return arr[index];
-  }
-
-  created() {
-    const newProducts = this.data.map((item: any) => new Product().deserialize(item));
-    this.products = sliceArray(newProducts, 4);
   }
 }
 </script>

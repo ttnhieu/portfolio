@@ -38,50 +38,18 @@
         <div class="home-about__item home-about__right">
           <div class="home-about__title">
             <span>Have A Nice Day!</span>
-            <h3>I'm Looking For UX/UI Designer.</h3>
+            <h3 class="title-font">I'm a Frontend Developer.</h3>
           </div>
 
-          <p class="home-about__text mb-0">
-            With 20 years experience as a professional a graphic designer, I have acquired the skills and knowledge necessary to make your project a success.
+          <p class="home-about__text">
+            I love the challenge of finding creative solutions to problems, and I enjoy collaborating with teams to achieve great results.
           </p>
-
-          <div class="home-about__progress mt-8">
-            <v-row>
-              <v-col
-                lg="4"
-                cols="12"
-                class="px-4"
-              >
-                <div class="home-about__progress-bar"></div>
-                <div class="home-about__progress-percent">
-                  <img src="@/assets/images/photoshop.svg" alt="">
-                  <span class="home-about__progress-number">90%</span>
-                </div>
-              </v-col>
-              <v-col
-                lg="4"
-                cols="12"
-                class="px-4"
-              >
-                <div class="home-about__progress-bar"></div>
-                <div class="home-about__progress-percent">
-                  <img src="@/assets/images/xd.svg" alt="">
-                  <span class="home-about__progress-number">80%</span>
-                </div>
-              </v-col>
-              <v-col
-                lg="4"
-                cols="12"
-                class="px-4"
-              >
-                <div class="home-about__progress-bar"></div>
-                <div class="home-about__progress-percent">
-                  <img src="@/assets/images/figma.svg" alt="">
-                  <span class="home-about__progress-number">70%</span>
-                </div>
-              </v-col>
-            </v-row>
-          </div>
+          <p class="home-about__text">
+            I am dedicated to keeping up-to-date with the latest technologies and trends to provide the best solutions for my clients.
+          </p>
+          <p class="home-about__text mb-0">
+            I pay great attention to detail in the design and development of my projects. My ultimate goal is to create software that is both user-friendly and impactful in achieving the client's objectives.
+          </p>
         </div>
       </v-col>
     </v-row>
