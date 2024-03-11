@@ -24,6 +24,22 @@
         </div>
       </div>
     </v-card>
+
+    <div class="menu-sm" v-show="showHeaderSm">
+      <v-list dense>
+        <v-list-item
+          v-for="item in menu"
+          :key="item.title"
+          link
+          :id="`${item.id}_sm`"
+        >
+          <a :href="item.id" >
+            {{ item.title }}
+          </a>
+        </v-list-item>
+      </v-list>
+    </div>
+
     <!-- <v-navigation-drawer
       v-model="drawer"
       absolute
@@ -62,30 +78,69 @@ export default class LayoutDefault extends Vue {
   drawer = null;
   menu = MENU;
   progress: number = 0;
+  showHeaderSm: boolean = false;
 
   mounted() {
-    window.addEventListener('scroll', function(event) {
-      setTimeout(() => {
-        const el: any = document.querySelector('#scrolling-techniques-7');
-        const headerEl: any = document.querySelector('.header');
-        const lineBarEl: any = document.querySelector('.line-bar');
-        const scollTopEl: any = document.querySelector('#scroll-top');
-        const height = el.scrollHeight - el.clientHeight;
-        const scrolled = (el.scrollTop / height) * 100;
-        lineBarEl.style.height = scrolled + '%';
-        if (el.scrollTop > 64) {
-          headerEl.classList.add('header-animate');
-          scollTopEl.style.right = '25px';
-        } else {
-          scollTopEl.style.right = '-10px';
-        }
+    setTimeout(() => {
+      const homeMenu: any = document.getElementById('#home');
+      if (homeMenu) {
+        homeMenu.classList.add('active');
+      }
 
-      }, 0);
+      const homeMenuSm: any = document.getElementById('#home_sm');
+      if (homeMenuSm) {
+        homeMenuSm.classList.add('active');
+      }
+
+    }, 300);
+
+    window.addEventListener('scroll', function(event) {
+      const scrollEl: any = document.querySelector('#scrolling-techniques-7');
+
+      /* Add animate for header when scroll */
+      const headerEl: any = document.querySelector('.header');
+      const lineBarEl: any = document.querySelector('.line-bar');
+      const scollTopEl: any = document.querySelector('#scroll-top');
+
+      const height = scrollEl.scrollHeight - scrollEl.clientHeight;
+      const scrolled = (scrollEl.scrollTop / height) * 100;
+      lineBarEl.style.height = scrolled + '%';
+
+      if (scrollEl.scrollTop > 64) {
+        headerEl.classList.add('header-animate');
+        scollTopEl.style.right = '25px';
+      } else {
+        scollTopEl.style.right = '-10px';
+      }
+
+      /* Active menu when scroll */
+      const headerHeigh = 64;
+
+      const activeMenu = (hash: string) => {
+        const itemEL: any = document.querySelector(hash);
+        const itemMenu: any = document.getElementById(hash);
+        const itemMenuSm: any = document.getElementById(`${hash}_sm`);
+        const itemOffsetTop = itemEL.offsetTop - headerHeigh;
+        const ItemMax = itemOffsetTop + itemEL.scrollHeight;
+
+        if (scrollEl.scrollTop >= itemOffsetTop && scrollEl.scrollTop < ItemMax) {
+          itemMenu.classList.add('active');
+          itemMenuSm.classList.add('active');
+        } else {
+          itemMenu.classList.remove('active');
+          itemMenuSm.classList.remove('active');
+        }
+      }
+
+      MENU.forEach((item) => {
+        activeMenu(item.id);
+      });
     }, true);
   }
 
   toggle(e: any) {
-    this.drawer = e;
+    // this.drawer = e;
+    this.showHeaderSm = !this.showHeaderSm;
   }
 
   scrollTotop() {
@@ -100,6 +155,7 @@ export default class LayoutDefault extends Vue {
     bottom: 25px;
     right: -10px;
     transition: all 0.3s ease;
+    z-index: 3;
 
     .text {
       text-decoration: none;
@@ -138,15 +194,42 @@ export default class LayoutDefault extends Vue {
     }
   }
 
-  .v-list-item {
+.v-list-item {
+  padding: 0;
+
+  a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--black) !important;
+    padding: 0 16px;
+  }
+}
+
+.menu-sm {
+  position: absolute;
+  left: 0;
+  top: 56px;
+  width: 100%;
+  z-index: 2;
+  transition: all .9s ease;
+
+  .v-list {
     padding: 0;
 
-    a {
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-      color: var(--black) !important;
-      padding: 0 16px;
+    &-item {
+      background: #fff;
+      font-weight: 500;
+      padding: 0 15px;
+
+       &.active {
+        background: var(--bg-highlight);
+      }
     }
   }
+
+  @media (min-width: 960px) {
+    display: none;
+  }
+}
 </style>

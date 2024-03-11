@@ -75,7 +75,7 @@
 
     img {
       position: absolute;
-      left: -74px;
+      left: -40px;
       top: -30px;
     }
   }
@@ -151,6 +151,10 @@
     .year-rounded {
       width: 230px;
       height: 230px;
+
+      img {
+        left: -74px;
+      }
     }
 
     .experience {
