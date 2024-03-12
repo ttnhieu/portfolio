@@ -1,64 +1,48 @@
 <template>
   <v-app id="app">
-    <v-card>
-      <TheHeader @toggle="toggle" :drawer="drawer" />
+    <div class="cover">
+      <div class="animate_content">
+        <v-card>
+          <TheHeader @toggle="toggle" :drawer="drawer" />
 
-      <v-sheet
-        id="scrolling-techniques-7"
-        class="overflow-y-auto ctn-wrp"
-      >
-        <div class="s-wrapper">
-          <router-view />
-        </div>
-        <div>
+          <v-sheet
+            id="scrolling-techniques-7"
+            class="overflow-y-auto ctn-wrp"
+          >
+            <div class="s-wrapper">
+              <router-view />
+            </div>
+            <div>
 
-        </div>
-        <TheFooter />
-      </v-sheet>
-      <div id="scroll-top">
-        <a href="#" @click="scrollTotop">
-          <span class="text">TO TOP</span>
-        </a>
-        <div class="line-container">
-          <span class="line-bar"></span>
+            </div>
+            <TheFooter />
+          </v-sheet>
+          <div id="scroll-top">
+            <a href="#" @click="scrollTotop">
+              <span class="text">TO TOP</span>
+            </a>
+            <div class="line-container">
+              <span class="line-bar"></span>
+            </div>
+          </div>
+        </v-card>
+
+        <div class="menu-sm" v-show="showHeaderSm">
+          <v-list dense>
+            <v-list-item
+              v-for="item in menu"
+              :key="item.title"
+              link
+              :id="`${item.id}_sm`"
+            >
+              <a :href="item.id" >
+                {{ item.title }}
+              </a>
+            </v-list-item>
+          </v-list>
         </div>
       </div>
-    </v-card>
-
-    <div class="menu-sm" v-show="showHeaderSm">
-      <v-list dense>
-        <v-list-item
-          v-for="item in menu"
-          :key="item.title"
-          link
-          :id="`${item.id}_sm`"
-        >
-          <a :href="item.id" >
-            {{ item.title }}
-          </a>
-        </v-list-item>
-      </v-list>
     </div>
-
-    <!-- <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-      :right="true"
-
-    >
-      <v-list dense>
-        <v-list-item
-          v-for="item in menu"
-          :key="item.title"
-          link
-        >
-          <a :href="item.id" >
-            {{ item.title }}
-          </a>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
   </v-app>
 </template>
 
@@ -150,49 +134,53 @@ export default class LayoutDefault extends Vue {
 }
 </script>
 <style lang="scss">
-  #scroll-top {
-    position: absolute;
-    bottom: 25px;
-    right: -10px;
-    transition: all 0.3s ease;
-    z-index: 3;
+#app {
+  background: #0e0e0e;
+}
 
-    .text {
-      text-decoration: none;
-      color: #000;
-      font-size: 13px;
-      transform: rotate(90deg);
-      text-transform: uppercase;
-      transform-origin: left;
-      white-space: nowrap;
-      position: absolute;
-      bottom: 150px;
+#scroll-top {
+  position: absolute;
+  bottom: 25px;
+  right: -10px;
+  transition: all 0.3s ease;
+  z-index: 3;
+
+  .text {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    transform: rotate(90deg);
+    text-transform: uppercase;
+    transform-origin: left;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    font-weight: 500;
+  }
+
+  .line {
+    &-container {
+      background-color: rgba(0,0,0,.08);
+      bottom: 0;
+      height: 100px;
       left: 0;
-      font-weight: 500;
+      position: absolute;
+      transition: all .3s ease;
+      transform: rotate(180deg);
+      width: 1px;
     }
 
-    .line {
-      &-container {
-        background-color: rgba(0,0,0,.08);
-        bottom: 0;
-        height: 100px;
-        left: 0;
-        position: absolute;
-        transition: all .3s ease;
-        transform: rotate(180deg);
-        width: 1px;
-      }
-
-      &-bar {
-        background-color: rgba(0,0,0,.4);
-        bottom: 0;
-        height: 0%;
-        left: 0;
-        position: absolute;
-        width: 1px;
-      }
+    &-bar {
+      background-color: rgba(0,0,0,.4);
+      bottom: 0;
+      height: 0%;
+      left: 0;
+      position: absolute;
+      width: 1px;
     }
   }
+}
 
 .v-list-item {
   padding: 0;
@@ -223,13 +211,19 @@ export default class LayoutDefault extends Vue {
       padding: 0 15px;
 
        &.active {
-        background: var(--bg-highlight);
+        background: var(--bg-main);
       }
     }
   }
 
   @media (min-width: 960px) {
     display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .animate_content {
+    animation: animateOpen 3s ease;
   }
 }
 </style>

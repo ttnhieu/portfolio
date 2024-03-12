@@ -19,6 +19,9 @@
         :key="item.title"
         :id="`${item.id}`"
       >
+        <!-- <router-link :to="{ name: '', hash: item.id }">
+          {{ item.title }}
+        </router-link> -->
         <a :href="item.id" class="d-flex justify-center align-center">
           {{ item.title }}
         </a>
@@ -32,13 +35,19 @@
       <!-- <v-icon>
         {{ icon }}
       </v-icon> -->
-      <v-icon v-show="!displayMenuSm">
+
+      <!-- <v-icon v-if="!displayMenuSm">
         mdi-menu
       </v-icon>
 
-      <v-icon v-show="displayMenuSm">
+      <v-icon v-else>
         mdi-close
-      </v-icon>
+      </v-icon> -->
+      <span class="hamburger" :class="{ 'close': displayMenuSm }">
+        <span class="hamburger-line first"></span>
+        <span class="hamburger-line second"></span>
+        <span class="hamburger-line third"></span>
+      </span>
     </v-btn>
 
     <!-- <v-app-bar-nav-icon class="btn-toggle" @click.stop="toggleDrawer()"></v-app-bar-nav-icon> -->
@@ -145,6 +154,52 @@ export default class TheHeaderComponent extends Vue {
     }
   }
 
+  .hamburger {
+    position: relative;
+    width: 24px;
+    height: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &-line {
+      width: 100%;
+      background: #ccc;
+      height: 2px;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+      position: relative;
+
+      &.first {
+        width: 50%;
+      }
+
+      &.third {
+        margin-left: 50%;
+        width: 50%;
+        transform-origin: left;
+      }
+    }
+
+    &.close {
+      .hamburger-line {
+        &.first {
+          transform: translate(2px, 6px) rotate(-135deg);
+        }
+
+        &.second {
+          transform: rotate(-45deg);
+        }
+
+        &.third {
+          transform: translate(8px, 0px) rotate(-135deg);
+        }
+      }
+    }
+  }
+
   @media (max-width: 959px) {
     .menu-pc {
       display: none;
@@ -158,6 +213,5 @@ export default class TheHeaderComponent extends Vue {
       display: block;
     }
   }
-
 }
 </style>

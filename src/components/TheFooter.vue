@@ -60,7 +60,7 @@ export default class TheFooterComponent extends Vue {
 </script>
 <style lang="scss">
 .theme--light.v-sheet.footer {
-  padding-top: 280px;
+  padding-top: 400px;
   padding-bottom: 80px;
   background-image: url('../assets/images/vector.svg'), url('../assets/images/vector2.svg') !important;
   background-position: -30px bottom, calc(100% + 60px) bottom;
