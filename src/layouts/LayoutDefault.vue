@@ -80,6 +80,7 @@ export default class LayoutDefault extends Vue {
 
     window.addEventListener('scroll', function(event) {
       const scrollEl: any = document.querySelector('#scrolling-techniques-7');
+      const clientWidth = document.documentElement.clientWidth;
 
       /* Add animate for header when scroll */
       const headerEl: any = document.querySelector('.header');
@@ -104,10 +105,28 @@ export default class LayoutDefault extends Vue {
         const itemEL: any = document.querySelector(hash);
         const itemMenu: any = document.getElementById(hash);
         const itemMenuSm: any = document.getElementById(`${hash}_sm`);
-        const itemOffsetTop = itemEL.offsetTop - headerHeigh;
-        const ItemMax = itemOffsetTop + itemEL.scrollHeight;
+        let itemOffsetTop = itemEL.offsetTop - headerHeigh;
+        let ItemMax = itemOffsetTop + itemEL.scrollHeight;
+        // console.log(scrollEl.scrollTop, 'scrollEl.scrollTop');
+        // console.log(itemOffsetTop, 'itemOffsetTop');
+
+        if (hash === '#contact') {
+          const height = clientWidth >= 820 &&  clientWidth <= 959 ? 400 : 300;
+          itemOffsetTop = itemOffsetTop - height;
+        }
+
+        if (hash === '#experience') {
+          const height = clientWidth >= 820 &&  clientWidth <= 959 ? 700 : 600;
+          ItemMax = ItemMax - height;
+        }
+
+        console.log(hash);
 
         if (scrollEl.scrollTop >= itemOffsetTop && scrollEl.scrollTop < ItemMax) {
+          // if (hash === '#contact') {
+          //   itemMenu.classList.remove('active');
+          //   itemMenuSm.classList.remove('active');
+          // }
           itemMenu.classList.add('active');
           itemMenuSm.classList.add('active');
         } else {
