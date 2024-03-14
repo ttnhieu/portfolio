@@ -107,8 +107,6 @@ export default class LayoutDefault extends Vue {
         const itemMenuSm: any = document.getElementById(`${hash}_sm`);
         let itemOffsetTop = itemEL.offsetTop - headerHeigh;
         let ItemMax = itemOffsetTop + itemEL.scrollHeight;
-        // console.log(scrollEl.scrollTop, 'scrollEl.scrollTop');
-        // console.log(itemOffsetTop, 'itemOffsetTop');
 
         if (hash === '#contact') {
           const height = clientWidth >= 820 &&  clientWidth <= 959 ? 400 : 300;
@@ -120,13 +118,7 @@ export default class LayoutDefault extends Vue {
           ItemMax = ItemMax - height;
         }
 
-        console.log(hash);
-
         if (scrollEl.scrollTop >= itemOffsetTop && scrollEl.scrollTop < ItemMax) {
-          // if (hash === '#contact') {
-          //   itemMenu.classList.remove('active');
-          //   itemMenuSm.classList.remove('active');
-          // }
           itemMenu.classList.add('active');
           itemMenuSm.classList.add('active');
         } else {
