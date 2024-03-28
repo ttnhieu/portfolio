@@ -104,7 +104,7 @@ export default class TheHeaderComponent extends Vue {
   transition: all .3s ease;
 
   img {
-    height: 30px;
+    height: 25px;
   }
 
   .btn-toggle {
