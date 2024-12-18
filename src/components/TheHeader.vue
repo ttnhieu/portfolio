@@ -201,6 +201,9 @@ export default class TheHeaderComponent extends Vue {
   }
 
   @media (max-width: 959px) {
+    img {
+      height: 20px;
+    }
     .menu-pc {
       display: none;
     }

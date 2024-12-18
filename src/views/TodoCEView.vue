@@ -140,7 +140,15 @@ export default class TodoCEView extends Vue {
   }
 
   &-submit {
-    background: linear-gradient(144deg, var(--todo-pink) 0%, var(--todo-bg-submain) 100%) !important;
+    background-image: linear-gradient(to right, var(--todo-pink), var(--todo-bg-submain), #dd867c, #22b9c7);
+    background-size: 300% 100%;
+
+    &:hover {
+      background-position: 100% 0;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
   }
 
   h2 {

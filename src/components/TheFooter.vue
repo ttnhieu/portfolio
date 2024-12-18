@@ -16,7 +16,7 @@
           class="title-font"
         >
           I want to hear from <br/>you please
-          <a href="" class="contact_link">contact me!</a>
+          <a href="javascript:void(0);" class="contact_link">contact me!</a>
         </h3>
         <div
           class="d-flex align-end contact"
@@ -30,13 +30,13 @@
           </div>
           <div class="contact-item socials">
             <div class="socials-list">
+              <a class="socials-item" href="https://www.linkedin.com/in/ttnhieu/" target="_blank">
+                <img src="@/assets/images/linkedin-stroke.svg" alt="">
+              </a>
               <span class="socials-item">
                 <img src="@/assets/images/facebook-stroke.svg" alt="">
               </span>
-              <span class="socials-item">
-                <img src="@/assets/images/linkedin-stroke.svg" alt="">
-              </span>
-              <span class="socials-item">
+              <span class="socials-item" >
                 <img src="@/assets/images/instagram-stroke.svg" alt="">
               </span>
             </div>
@@ -102,15 +102,23 @@ export default class TheFooterComponent extends Vue {
       display: flex;
       justify-content: space-between;
       padding: 0 80px;
+      margin-bottom: 30px;
     }
 
     &-item {
       opacity: .3;
+      height: 30px;
+      width: 30px;
+      transition: all .3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
     }
 
     img {
-      width: 30px;
-      height: 30px;
+      width: 100%;
+      height: auto;
     }
   }
 
