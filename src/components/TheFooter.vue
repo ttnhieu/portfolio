@@ -31,13 +31,16 @@
           <div class="contact-item socials">
             <div class="socials-list">
               <a class="socials-item" href="https://www.linkedin.com/in/ttnhieu/" target="_blank">
-                <img src="@/assets/images/linkedin-stroke.svg" alt="">
+                <icon-linkedin />
+
               </a>
               <span class="socials-item">
-                <img src="@/assets/images/facebook-stroke.svg" alt="">
+                <icon-facebook />
+
               </span>
               <span class="socials-item" >
-                <img src="@/assets/images/instagram-stroke.svg" alt="">
+                <icon-instagram />
+
               </span>
             </div>
             <p class="mb-0 text-lg-center">© {{ new Date().getFullYear() }} Hieu Tran.</p>
@@ -51,9 +54,17 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import IconFacebook from '@/components/icons/IconFacebook.vue';
+import IconLinkedin from '@/components/icons/IconLinkedin.vue';
+import IconInstagram from '@/components/icons/IconInstagram.vue';
 
 @Component({
   name: 'TheFooterComponent',
+  components: {
+    IconFacebook,
+    IconLinkedin,
+    IconInstagram,
+  }
 })
 export default class TheFooterComponent extends Vue {
 }
@@ -108,8 +119,12 @@ export default class TheFooterComponent extends Vue {
     &-item {
       opacity: .3;
       height: 30px;
-      width: 30px;
       transition: all .3s ease;
+
+      .c-icon {
+        font-size: 30px;
+        color: #fff;
+      }
 
       &:hover {
         opacity: 1;
@@ -155,9 +170,8 @@ export default class TheFooterComponent extends Vue {
       &-item {
         margin-right: 15px;
 
-        img {
-          width: 25px;
-          height: 25px;
+        .c-icon {
+          font-size: 25px;
         }
       }
     }
