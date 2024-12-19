@@ -21,7 +21,7 @@
 
       &::before {
         position: absolute;
-        content: "";
+        content: '';
         width: 13px;
         height: 13px;
         border-radius: 100%;
@@ -78,7 +78,7 @@
         font-size: 16px;
         color: #fff;
         font-weight: bold;
-        font-family: "Reey Regular";
+        font-family: 'Reey Regular';
         border: 5px solid #e2d7c1;
       }
     }
@@ -86,7 +86,7 @@
 
   .page-highlight {
     background-color: var(--bg-highlight);
-    background-image: url("../../assets/images/vector6.svg");
+    background-image: url('../../assets/images/vector6.svg');
     background-position: 100% 100%;
     position: relative;
     margin-bottom: -320px;

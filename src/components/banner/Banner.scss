@@ -2,7 +2,7 @@
   height: calc(100vh - 64px);
 
   &__wrp {
-    background: url("../../assets/images/banner.png");
+    background: url('../../assets/images/banner.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
@@ -148,14 +148,23 @@
   }
 
   @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 
   /* The typewriter cursor effect */
   @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
   }
 
   @media (max-width: 1600px) {
@@ -244,7 +253,6 @@
   }
 
   @media (max-width: 959px) {
-
   }
 
   @media (max-width: 768px) {
@@ -252,7 +260,6 @@
       font-size: 55px;
     }
   }
-
 
   @media (max-width: 480px) {
     &__name {

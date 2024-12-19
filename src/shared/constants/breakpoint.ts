@@ -4,4 +4,4 @@ export const BEAKPOINTS = {
   MEDIUM: 960,
   SMALL: 600,
   EXTRA_SMALL: 599,
-}
+};

@@ -11,8 +11,8 @@ export interface TodoInterface {
 
 export class Todo implements Deserializable<Todo>, TodoInterface {
   id?: number;
-  title: string = '';;
-  description: string = '';;
+  title: string = '';
+  description: string = '';
   type: string = '';
   is_done?: boolean = false;
 
@@ -35,6 +35,6 @@ export class Todo implements Deserializable<Todo>, TodoInterface {
       title: this.title,
       description: this.description,
       type: this.type,
-    }
+    };
   }
 }

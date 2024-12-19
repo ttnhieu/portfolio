@@ -6,9 +6,7 @@
 
         <p>The page you were looking for does not exist</p>
 
-        <v-btn color="primary" outlined>
-          Get me out of here!
-        </v-btn>
+        <v-btn color="primary" outlined> Get me out of here! </v-btn>
       </v-col>
     </v-row>
   </v-container>

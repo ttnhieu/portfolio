@@ -5,16 +5,11 @@
         <v-card>
           <TheHeader @toggle="toggle" :drawer="drawer" />
 
-          <v-sheet
-            id="scrolling-techniques-7"
-            class="overflow-y-auto ctn-wrp"
-          >
+          <v-sheet id="scrolling-techniques-7" class="overflow-y-auto ctn-wrp">
             <div class="s-wrapper">
               <router-view />
             </div>
-            <div>
-
-            </div>
+            <div></div>
             <TheFooter />
           </v-sheet>
           <div id="scroll-top">
@@ -35,7 +30,7 @@
               link
               :id="`${item.id}_sm`"
             >
-              <a :href="item.id" >
+              <a :href="item.id">
                 {{ item.title }}
               </a>
             </v-list-item>
@@ -54,8 +49,8 @@ import { MENU } from '@/shared/constants/common';
 @Component({
   name: 'LayoutDefault',
   components: {
-    'TheHeader': LazyLoadService.loadComponent('TheHeader'),
-    'TheFooter': LazyLoadService.loadComponent('TheFooter'),
+    TheHeader: LazyLoadService.loadComponent('TheHeader'),
+    TheFooter: LazyLoadService.loadComponent('TheFooter'),
   },
 })
 export default class LayoutDefault extends Vue {
@@ -75,62 +70,68 @@ export default class LayoutDefault extends Vue {
       if (homeMenuSm) {
         homeMenuSm.classList.add('active');
       }
-
     }, 300);
 
-    window.addEventListener('scroll', function(event) {
-      const scrollEl: any = document.querySelector('#scrolling-techniques-7');
-      const clientWidth = document.documentElement.clientWidth;
+    window.addEventListener(
+      'scroll',
+      function (event) {
+        const scrollEl: any = document.querySelector('#scrolling-techniques-7');
+        const clientWidth = document.documentElement.clientWidth;
 
-      /* Add animate for header when scroll */
-      const headerEl: any = document.querySelector('.header');
-      const lineBarEl: any = document.querySelector('.line-bar');
-      const scollTopEl: any = document.querySelector('#scroll-top');
+        /* Add animate for header when scroll */
+        const headerEl: any = document.querySelector('.header');
+        const lineBarEl: any = document.querySelector('.line-bar');
+        const scollTopEl: any = document.querySelector('#scroll-top');
 
-      const height = scrollEl.scrollHeight - scrollEl.clientHeight;
-      const scrolled = (scrollEl.scrollTop / height) * 100;
-      lineBarEl.style.height = scrolled + '%';
+        const height = scrollEl.scrollHeight - scrollEl.clientHeight;
+        const scrolled = (scrollEl.scrollTop / height) * 100;
+        lineBarEl.style.height = scrolled + '%';
 
-      if (scrollEl.scrollTop > 64) {
-        headerEl.classList.add('header-animate');
-        scollTopEl.style.right = '25px';
-      } else {
-        scollTopEl.style.right = '-10px';
-      }
-
-      /* Active menu when scroll */
-      const headerHeigh = 64;
-
-      const activeMenu = (hash: string) => {
-        const itemEL: any = document.querySelector(hash);
-        const itemMenu: any = document.getElementById(hash);
-        const itemMenuSm: any = document.getElementById(`${hash}_sm`);
-        let itemOffsetTop = itemEL.offsetTop - headerHeigh;
-        let ItemMax = itemOffsetTop + itemEL.scrollHeight;
-
-        if (hash === '#contact') {
-          const height = clientWidth >= 820 &&  clientWidth <= 959 ? 400 : 300;
-          itemOffsetTop = itemOffsetTop - height;
-        }
-
-        if (hash === '#experience') {
-          const height = clientWidth >= 820 &&  clientWidth <= 959 ? 700 : 600;
-          ItemMax = ItemMax - height;
-        }
-
-        if (scrollEl.scrollTop >= itemOffsetTop && scrollEl.scrollTop < ItemMax) {
-          itemMenu.classList.add('active');
-          itemMenuSm.classList.add('active');
+        if (scrollEl.scrollTop > 64) {
+          headerEl.classList.add('header-animate');
+          scollTopEl.style.right = '25px';
         } else {
-          itemMenu.classList.remove('active');
-          itemMenuSm.classList.remove('active');
+          scollTopEl.style.right = '-10px';
         }
-      }
 
-      MENU.forEach((item) => {
-        activeMenu(item.id);
-      });
-    }, true);
+        /* Active menu when scroll */
+        const headerHeigh = 64;
+
+        const activeMenu = (hash: string) => {
+          const itemEL: any = document.querySelector(hash);
+          const itemMenu: any = document.getElementById(hash);
+          const itemMenuSm: any = document.getElementById(`${hash}_sm`);
+          let itemOffsetTop = itemEL.offsetTop - headerHeigh;
+          let ItemMax = itemOffsetTop + itemEL.scrollHeight;
+
+          if (hash === '#contact') {
+            const height = clientWidth >= 820 && clientWidth <= 959 ? 400 : 300;
+            itemOffsetTop = itemOffsetTop - height;
+          }
+
+          if (hash === '#experience') {
+            const height = clientWidth >= 820 && clientWidth <= 959 ? 700 : 600;
+            ItemMax = ItemMax - height;
+          }
+
+          if (
+            scrollEl.scrollTop >= itemOffsetTop &&
+            scrollEl.scrollTop < ItemMax
+          ) {
+            itemMenu.classList.add('active');
+            itemMenuSm.classList.add('active');
+          } else {
+            itemMenu.classList.remove('active');
+            itemMenuSm.classList.remove('active');
+          }
+        };
+
+        MENU.forEach((item) => {
+          activeMenu(item.id);
+        });
+      },
+      true,
+    );
   }
 
   toggle(e: any) {
@@ -172,18 +173,18 @@ export default class LayoutDefault extends Vue {
 
   .line {
     &-container {
-      background-color: rgba(0,0,0,.08);
+      background-color: rgba(0, 0, 0, 0.08);
       bottom: 0;
       height: 100px;
       left: 0;
       position: absolute;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       transform: rotate(180deg);
       width: 1px;
     }
 
     &-bar {
-      background-color: rgba(0,0,0,.4);
+      background-color: rgba(0, 0, 0, 0.4);
       bottom: 0;
       height: 0%;
       left: 0;
@@ -211,7 +212,7 @@ export default class LayoutDefault extends Vue {
   top: 56px;
   width: 100%;
   z-index: 2;
-  transition: all .9s ease;
+  transition: all 0.9s ease;
 
   .v-list {
     padding: 0;
@@ -221,7 +222,7 @@ export default class LayoutDefault extends Vue {
       font-weight: 500;
       padding: 0 15px;
 
-       &.active {
+      &.active {
         background: var(--bg-main);
       }
     }

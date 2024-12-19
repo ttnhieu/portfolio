@@ -1,9 +1,5 @@
 <template>
-  <v-card
-    class="s-card-post"
-    outlined
-    tile
-  >
+  <v-card class="s-card-post" outlined tile>
     <router-link :to="{ name: item.route_name }" target="_blank">
       <div class="s-card-post__cover">
         <img
@@ -16,7 +12,7 @@
       <v-card-text class="black--text s-card-post__text">
         <h2 class="primary--text s-card-post__title">{{ item.title }}</h2>
         <p class="s-card-post__des mb-0">{{ item.description }}</p>
-        <img class="hover" src="@/assets/images/vector5.svg" alt="">
+        <img class="hover" src="@/assets/images/vector5.svg" alt="" />
       </v-card-text>
     </router-link>
   </v-card>
@@ -76,7 +72,7 @@ export default class CardPostComponent extends Vue {
 
   &__text {
     background-color: #f8f5ef;
-    box-shadow: 0 14px 20px hsla(39,9%,71%,.3);
+    box-shadow: 0 14px 20px hsla(39, 9%, 71%, 0.3);
     padding: 20px 30px 28px 50px;
     border-bottom-left-radius: 10px !important;
     border-bottom-right-radius: 10px !important;
@@ -90,24 +86,24 @@ export default class CardPostComponent extends Vue {
 
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       width: 40px;
       height: 2px;
-      background-color: rgba(0,0,0,.1);
+      background-color: rgba(0, 0, 0, 0.1);
       left: -50px;
       bottom: 10px;
     }
 
     &::after {
       position: absolute;
-      content: "";
+      content: '';
       width: 0;
       height: 2px;
       background-color: var(--extra-color);
       left: -50px;
       bottom: 10px;
       z-index: 1;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
   }
 
@@ -127,8 +123,8 @@ export default class CardPostComponent extends Vue {
     right: 10px;
     width: 25px;
     height: 25px;
-    opacity: .1;
-    transition: all .3s ease;
+    opacity: 0.1;
+    transition: all 0.3s ease;
   }
 }
 </style>

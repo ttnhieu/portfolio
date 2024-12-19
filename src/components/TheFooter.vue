@@ -1,13 +1,6 @@
 <template>
-  <v-footer
-    padless
-    id="contact"
-  >
-    <v-card
-      flat
-      tile
-      class="footer lighten-1 w-100"
-    >
+  <v-footer padless id="contact">
+    <v-card flat tile class="footer lighten-1 w-100">
       <div class="s-container">
         <h3
           data-aos="fade-up"
@@ -15,7 +8,7 @@
           data-aos-duration="1000"
           class="title-font"
         >
-          I want to hear from <br/>you please
+          I want to hear from <br />you please
           <a href="javascript:void(0);" class="contact_link">contact me!</a>
         </h3>
         <div
@@ -26,24 +19,27 @@
         >
           <span class="contact-item email">ttn.hieu.44@gmail.com</span>
           <div class="contact-item text-lg-center">
-            <img class="icon" src="@/assets/images/vector3.svg" alt="">
+            <img class="icon" src="@/assets/images/vector3.svg" alt="" />
           </div>
           <div class="contact-item socials">
             <div class="socials-list">
-              <a class="socials-item" href="https://www.linkedin.com/in/ttnhieu/" target="_blank">
+              <a
+                class="socials-item"
+                href="https://www.linkedin.com/in/ttnhieu/"
+                target="_blank"
+              >
                 <icon-linkedin />
-
               </a>
               <span class="socials-item">
                 <icon-facebook />
-
               </span>
-              <span class="socials-item" >
+              <span class="socials-item">
                 <icon-instagram />
-
               </span>
             </div>
-            <p class="mb-0 text-lg-center">© {{ new Date().getFullYear() }} Hieu Tran.</p>
+            <p class="mb-0 text-lg-center">
+              © {{ new Date().getFullYear() }} Hieu Tran.
+            </p>
             <!-- <p class="mb-0 text-lg-center">Made with ❤ by Hieu</p> -->
           </div>
         </div>
@@ -64,16 +60,16 @@ import IconInstagram from '@/components/icons/IconInstagram.vue';
     IconFacebook,
     IconLinkedin,
     IconInstagram,
-  }
+  },
 })
-export default class TheFooterComponent extends Vue {
-}
+export default class TheFooterComponent extends Vue {}
 </script>
 <style lang="scss">
 .theme--light.v-sheet.footer {
   padding-top: 400px;
   padding-bottom: 80px;
-  background-image: url('../assets/images/vector.svg'), url('../assets/images/vector2.svg') !important;
+  background-image: url('../assets/images/vector.svg'),
+    url('../assets/images/vector2.svg') !important;
   background-position: -30px bottom, calc(100% + 60px) bottom;
   background-color: var(--extra-color) !important;
   color: #fff !important;
@@ -98,9 +94,9 @@ export default class TheFooterComponent extends Vue {
 
   .email {
     color: #fff;
-    opacity: .5;
+    opacity: 0.5;
     font-size: 30px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   .icon {
@@ -117,9 +113,9 @@ export default class TheFooterComponent extends Vue {
     }
 
     &-item {
-      opacity: .3;
+      opacity: 0.3;
       height: 30px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
 
       .c-icon {
         font-size: 30px;

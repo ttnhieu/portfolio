@@ -19,7 +19,7 @@ export class Blog implements Deserializable<Blog>, BlogInterface {
   get createdAtString() {
     const arr = this.created_at.split('/');
 
-    return moment(this.created_at).format('LL')
+    return moment(this.created_at).format('LL');
   }
 
   deserialize(input: Partial<BlogInterface>): Blog {

@@ -37,7 +37,7 @@ export default class HeaderPageHorizontalComponent extends Vue {
   }
 
   @media (max-width: 768px) {
-   flex-direction: column;
+    flex-direction: column;
 
     .main-title,
     .description {

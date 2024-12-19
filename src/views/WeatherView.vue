@@ -1,44 +1,45 @@
 <template>
-  <v-container fluid class='pa-0 projects'>
+  <v-container fluid class="pa-0 projects">
     <v-card
-      class='weather-app px-6 py-6'
+      class="weather-app px-6 py-6"
       dark
-      max-width='450'
-      :style="{'background-image': backgroundImage }"
+      max-width="450"
+      :style="{ 'background-image': backgroundImage }"
     >
       <div>
-        <h2 class='text-center mb-5 weather-app__title'>Weather App</h2>
-        <div class='d-flex'>
+        <h2 class="text-center mb-5 weather-app__title">Weather App</h2>
+        <div class="d-flex">
           <v-text-field
-            v-model='city'
+            v-model="city"
             single-line
             outlined
-            placeholder='City Name'
-            @keydown.enter='checkWeather'
+            placeholder="City Name"
+            @keydown.enter="checkWeather"
           ></v-text-field>
         </div>
       </div>
 
-      <div class='weather-app__info mt-10' :style="{'height': weather.temp ? '504px' : '0px'}">
-        <p class='weather-app__city mb-0'>{{ weather.city }}</p>
+      <div
+        class="weather-app__info mt-10"
+        :style="{ height: weather.temp ? '504px' : '0px' }"
+      >
+        <p class="weather-app__city mb-0">{{ weather.city }}</p>
         <h2>{{ weather.tempCelcius }}</h2>
-        <p class='mb-0 weather-app__condition'>{{ weather.weather_condition }}</p>
-        <p class='mb-0 weather-app__temp'>
-          <span class='mr-3'>H: {{ weather.tempCelcius }}</span>
+        <p class="mb-0 weather-app__condition">
+          {{ weather.weather_condition }}
+        </p>
+        <p class="mb-0 weather-app__temp">
+          <span class="mr-3">H: {{ weather.tempCelcius }}</span>
           <span>L: {{ weather.tempFarenheit }}</span>
         </p>
-        <div class='weather-app__sub-info' v-if='weather.temp'>
-          <p class='d-flex justify-space-between mb-3 pb-3'>
-            <span>
-              Humidity
-            </span>
+        <div class="weather-app__sub-info" v-if="weather.temp">
+          <p class="d-flex justify-space-between mb-3 pb-3">
+            <span> Humidity </span>
             <span>{{ weather.humidityString }}</span>
           </p>
 
-          <p class='d-flex justify-space-between mb-0'>
-            <span>
-              Pressure
-            </span>
+          <p class="d-flex justify-space-between mb-0">
+            <span> Pressure </span>
             <span>{{ weather.pressure }}</span>
           </p>
         </div>
@@ -47,7 +48,7 @@
   </v-container>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import { Weather } from '@/shared/models/weather';
 
@@ -56,7 +57,8 @@ import { Weather } from '@/shared/models/weather';
 })
 export default class WeatherView extends Vue {
   apiKey = '3c73104f5cae50269ef56c922c7f7143';
-  apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&lang=en';
+  apiUrl =
+    'https://api.openweathermap.org/data/2.5/weather?units=metric&lang=en';
   city: string = '';
   tempCelcius: string = '';
   humidity: string = '';
@@ -66,7 +68,8 @@ export default class WeatherView extends Vue {
   get titleRules() {
     return [
       (v: string) => !!v || 'Title is required',
-      (v: string) => (v && v.length <= 100) || 'Title must be less than 100 characters',
+      (v: string) =>
+        (v && v.length <= 100) || 'Title must be less than 100 characters',
     ];
   }
 
@@ -76,11 +79,14 @@ export default class WeatherView extends Vue {
 
   async checkWeather() {
     try {
-      const response = await fetch(`${this.apiUrl}&q=${this.city}&appid=${this.apiKey}`);
+      const response = await fetch(
+        `${this.apiUrl}&q=${this.city}&appid=${this.apiKey}`,
+      );
 
       if (!response.ok) {
         throw new Error('Unable to fetch weather data.');
-      }''
+      }
+      ('');
 
       const data = await response.json();
       this.tempCelcius = Math.round(data.main.temp) + '°C';
@@ -95,14 +101,18 @@ export default class WeatherView extends Vue {
   }
 }
 </script>
-<style lang='scss'>
+<style lang="scss">
 $txt-shadow: #6e606042;
 
 .theme--light.v-sheet {
   background-color: #fff !important;
 }
 .theme--light.v-application {
-  background: linear-gradient(172deg, rgba(123,91,109,1) 7%, rgba(58,51,81,1) 100%);
+  background: linear-gradient(
+    172deg,
+    rgba(123, 91, 109, 1) 7%,
+    rgba(58, 51, 81, 1) 100%
+  );
 }
 
 .weather-app {
@@ -111,7 +121,7 @@ $txt-shadow: #6e606042;
 
   &__info {
     text-align: center;
-    transition: height .5s;
+    transition: height 0.5s;
     overflow: hidden;
 
     h2 {
@@ -159,7 +169,8 @@ $txt-shadow: #6e606042;
 
   &.v-card {
     border-radius: 8px;
-    box-shadow: 0px 0px 3px -2px rgb(0 0 0 / 60%), 0px 10px 20px 0px rgb(0 0 0 / 30%), 0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0px 0px 3px -2px rgb(0 0 0 / 60%),
+      0px 10px 20px 0px rgb(0 0 0 / 30%), 0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important;
     background-image: url('../assets/images/weather/weather-bg-clear.svg');
     background-position: center;
     background-size: cover;

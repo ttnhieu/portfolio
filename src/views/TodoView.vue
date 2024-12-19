@@ -1,27 +1,31 @@
 <template>
   <v-container fluid class="pa-0 projects">
-    <v-card
-      class="todo-app"
-      max-width="450"
-    >
+    <v-card class="todo-app" max-width="450">
       <div class="todo-app-header">
         <div class="todo-app-header__item todo-app-header__left px-6 py-6">
-          <h3 class="todo-app-header__title mt-4">Your <br>Things</h3>
+          <h3 class="todo-app-header__title mt-4">Your <br />Things</h3>
           <p class="todo-app-header__time mb-0">{{ currentTime }}</p>
         </div>
         <div class="todo-app-header__item todo-app-header__right px-6 py-6">
           <div class="todo-app-header__sum">
             <div class="todo-app-header__sum-item mr-4">
-              <span class="todo-app-header__sum-number">{{ personalTask }}</span>
+              <span class="todo-app-header__sum-number">{{
+                personalTask
+              }}</span>
               <span class="todo-app-header__sum-cat">Personal</span>
             </div>
             <div class="todo-app-header__sum-item">
-              <span class="todo-app-header__sum-number">{{ businessTask }}</span>
+              <span class="todo-app-header__sum-number">{{
+                businessTask
+              }}</span>
               <span class="todo-app-header__sum-cat">Business</span>
             </div>
           </div>
           <div class="todo-app__chart">
-            <v-progress-circular :value="completedPercent" class="mr-2"></v-progress-circular>
+            <v-progress-circular
+              :value="completedPercent"
+              class="mr-2"
+            ></v-progress-circular>
             <span class="todo-app__percent">{{ completedPercent }}% done</span>
           </div>
         </div>
@@ -30,10 +34,7 @@
       <div class="todo-app-list">
         <v-list three-line v-if="todoList.length">
           <template v-for="(item, index) in todoList">
-            <v-list-item
-              :key="index"
-              class="px-6"
-            >
+            <v-list-item :key="index" class="px-6">
               <v-checkbox
                 input-value="true"
                 value
@@ -49,7 +50,9 @@
                   :id="'text_' + item.id"
                 >
                   <v-list-item-title>{{ item.title }}</v-list-item-title>
-                  <v-list-item-subtitle>{{ item.description }}</v-list-item-subtitle>
+                  <v-list-item-subtitle>{{
+                    item.description
+                  }}</v-list-item-subtitle>
                 </div>
                 <v-btn
                   class="ml-2"
@@ -57,9 +60,7 @@
                   icon
                   @click="removeTodo(item)"
                 >
-                  <v-icon dark>
-                    mdi-close
-                  </v-icon>
+                  <v-icon dark> mdi-close </v-icon>
                 </v-btn>
               </v-list-item-content>
             </v-list-item>
@@ -77,15 +78,8 @@
           </span>
         </p>
 
-        <v-btn
-          fab
-          dark
-          class="todo-app__btn-add"
-          @click="addNew"
-        >
-          <v-icon dark>
-            mdi-plus
-          </v-icon>
+        <v-btn fab dark class="todo-app__btn-add" @click="addNew">
+          <v-icon dark> mdi-plus </v-icon>
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -95,7 +89,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import moment from 'moment';
-import IconFacebook from '@/components/icons/IconFacebook.vue'
+import IconFacebook from '@/components/icons/IconFacebook.vue';
 
 import { Todo } from '@/shared/models/todo';
 
@@ -103,7 +97,7 @@ import { Todo } from '@/shared/models/todo';
   name: 'TodoView',
   components: {
     IconFacebook,
-  }
+  },
 })
 export default class TodoView extends Vue {
   todoList: Todo[] = [];
@@ -129,7 +123,7 @@ export default class TodoView extends Vue {
       return 0;
     }
 
-    const percent = this.completedTask * 100 / total;
+    const percent = (this.completedTask * 100) / total;
 
     return Math.round(percent);
   }
@@ -141,7 +135,9 @@ export default class TodoView extends Vue {
   mounted() {
     const todoData: any = localStorage.getItem('todo');
     if (todoData) {
-      this.todoList = JSON.parse(todoData).map((item: Todo) => new Todo().deserialize(item));
+      this.todoList = JSON.parse(todoData).map((item: Todo) =>
+        new Todo().deserialize(item),
+      );
     }
   }
 
@@ -198,7 +194,11 @@ export default class TodoView extends Vue {
         content: '';
         width: 100%;
         height: 4px;
-        background: linear-gradient(144deg, var(--todo-pink) 0%, var(--todo-bg-submain) 100%);
+        background: linear-gradient(
+          144deg,
+          var(--todo-pink) 0%,
+          var(--todo-bg-submain) 100%
+        );
         position: absolute;
         left: 0;
         bottom: 0;

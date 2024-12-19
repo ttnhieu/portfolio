@@ -1,6 +1,6 @@
 <template>
- <span class="c-icon">
-   <svg
+  <span class="c-icon">
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       :width="width"
@@ -9,15 +9,41 @@
       fill="none"
       class="svg replaced-svg"
     >
-      <mask id="mask0_57_375" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
-        <rect width="33.4513" height="33.4513" fill="url(#pattern0-face)"></rect>
+      <mask
+        id="mask0_57_375"
+        style="mask-type: alpha"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="34"
+        height="34"
+      >
+        <rect
+          width="33.4513"
+          height="33.4513"
+          fill="url(#pattern0-face)"
+        ></rect>
       </mask>
       <g mask="url(#mask0_57_375)">
-        <rect x="-8.36267" y="-8.3623" width="75.2654" height="75.2654" :fill="iconColor"></rect>
+        <rect
+          x="-8.36267"
+          y="-8.3623"
+          width="75.2654"
+          height="75.2654"
+          :fill="iconColor"
+        ></rect>
       </g>
       <defs>
-        <pattern id="pattern0-face" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlink:href="#image0_57_375" transform="translate(0 -0.000976562) scale(0.00195312)"></use>
+        <pattern
+          id="pattern0-face"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
+          <use
+            xlink:href="#image0_57_375"
+            transform="translate(0 -0.000976562) scale(0.00195312)"
+          ></use>
         </pattern>
         <image
           id="image0_57_375"
@@ -27,7 +53,7 @@
         ></image>
       </defs>
     </svg>
- </span>
+  </span>
 </template>
 <script lang="ts">
 import { Component, Mixins } from 'vue-property-decorator';
@@ -36,6 +62,5 @@ import IconBase from './IconBase.vue';
 @Component({
   name: 'IconFaceComponent',
 })
-export default class IconFace extends Mixins(IconBase) {
-}
+export default class IconFace extends Mixins(IconBase) {}
 </script>
