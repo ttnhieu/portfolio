@@ -7,13 +7,11 @@
         description="Here are some of my skills, on which I have worked."
       />
 
-      <v-row
-        no-gutters
-        class="home-skills__list"
-      >
+      <v-row no-gutters class="home-skills__list">
         <v-col
           v-for="(item, index) in skills"
-          sm="4" lg="3"
+          sm="4"
+          lg="3"
           cols="6"
           class="px-4 mb-10 mb-lg-8 home-skills__item d-flex align-center"
           data-aos="fade-up"
@@ -21,7 +19,7 @@
           :data-aos-delay="aosDelayTime(index)"
           :data-aos-duration="1000"
         >
-          <img :src="item.image_url" alt="">
+          <img :src="item.image_url" alt="" />
 
           <div class="home-skills__item-title ml-3">
             {{ item.name }}
@@ -29,7 +27,7 @@
         </v-col>
       </v-row>
       <div class="shape">
-        <img src="@/assets/images/vector4.svg" alt="">
+        <img src="@/assets/images/vector4.svg" alt="" />
       </div>
     </div>
   </div>

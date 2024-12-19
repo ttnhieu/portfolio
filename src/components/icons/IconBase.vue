@@ -3,10 +3,10 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class IconBase extends Vue {
-   @Prop({ default: 'box'}) iconName: string;
-   @Prop({ default: '1em'}) width: string | number;
-   @Prop({ default: '1em'}) height: string | number;
-   @Prop({ default: 'currentColor'}) iconColor: string;
+  @Prop({ default: 'box' }) iconName: string;
+  @Prop({ default: '1em' }) width: string | number;
+  @Prop({ default: '1em' }) height: string | number;
+  @Prop({ default: 'currentColor' }) iconColor: string;
 }
 </script>
 <style scoped>

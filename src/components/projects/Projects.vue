@@ -6,16 +6,15 @@
       <p class="mb-0">Here are some of my selected projects worth sharing.</p>
     </div>
 
-    <v-row
-      no-gutters
-    >
+    <v-row no-gutters>
       <v-col
         v-for="(item, index) in products"
         data-aos="fade-up"
         :key="item.id"
         :data-aos-delay="aosDelayTime(index)"
         :data-aos-duration="1000"
-        sm="6" lg="4"
+        sm="6"
+        lg="4"
         cols="12"
         class="px-4 mb-10"
       >
@@ -31,7 +30,6 @@ import LazyLoadService from '@/shared/utils/lazy-load.service';
 import { Product } from '@/shared/models/product';
 import { aosDelay } from '@/shared/utils/helper';
 
-
 @Component({
   name: 'ProjectsComponent',
   components: {
@@ -45,14 +43,16 @@ export default class ProjectsComponent extends Vue {
     {
       id: 1,
       title: 'Todo List',
-      description: 'Create a "to-do list" to organize and prioritize your tasks.',
+      description:
+        'Create a "to-do list" to organize and prioritize your tasks.',
       image_url: require('@/assets/images/6.jpg'),
       route_name: 'TodoPage',
     },
     {
       id: 2,
       title: 'Job Listings with Filtering',
-      description: 'Job Listing with Filtering that lists available jobs that can be filtered.',
+      description:
+        'Job Listing with Filtering that lists available jobs that can be filtered.',
       image_url: require('@/assets/images/4.jpg'),
       route_name: 'JobListingPage',
     },
@@ -71,7 +71,9 @@ export default class ProjectsComponent extends Vue {
   }
 
   created() {
-    this.products = this.data.map((item: any) => new Product().deserialize(item));
+    this.products = this.data.map((item: any) =>
+      new Product().deserialize(item),
+    );
   }
 }
 </script>

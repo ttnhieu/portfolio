@@ -17,25 +17,25 @@
       </div>
     </div>
     <span class="shape shape-1">
-      <img src="@/assets/images/icon5.svg" class="animate-circle" alt="">
+      <img src="@/assets/images/icon5.svg" class="animate-circle" alt="" />
     </span>
     <span class="shape shape-2">
-      <img src="@/assets/images/icon7.svg" alt="">
+      <img src="@/assets/images/icon7.svg" alt="" />
     </span>
     <span class="shape shape-3">
-      <img src="@/assets/images/icon3.svg" alt="">
+      <img src="@/assets/images/icon3.svg" alt="" />
     </span>
     <span class="shape shape-4">
-      <img src="@/assets/images/icon6.svg" class="animate-circle" alt="">
+      <img src="@/assets/images/icon6.svg" class="animate-circle" alt="" />
     </span>
     <span class="shape shape-5">
-      <img src="@/assets/images/icon1.svg" alt="">
+      <img src="@/assets/images/icon1.svg" alt="" />
     </span>
     <span class="shape shape-6">
-      <img src="@/assets/images/icon5.svg" class="animate-circle" alt="">
+      <img src="@/assets/images/icon5.svg" class="animate-circle" alt="" />
     </span>
     <span class="shape shape-7">
-      <img src="@/assets/images/icon2.svg" alt="">
+      <img src="@/assets/images/icon2.svg" alt="" />
     </span>
   </div>
 </template>
@@ -69,7 +69,8 @@ export default class BannerComponent extends Vue {
   }
 
   startTypeWriter(typewriter: any) {
-    typewriter.typeString("I'm a Front-end Developer")
+    typewriter
+      .typeString("I'm a Front-end Developer")
       .pauseFor(2500)
       .deleteAll()
       .typeString('I Build Website')

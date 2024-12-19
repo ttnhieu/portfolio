@@ -1,10 +1,6 @@
 <template>
   <v-container fluid class="pa-0 projects">
-    <v-card
-      class="mx-auto todo-app todo-app-ce px-6 py-6"
-      max-width="500"
-      dark
-    >
+    <v-card class="mx-auto todo-app todo-app-ce px-6 py-6" max-width="500" dark>
       <h2 class="text-center">Add New Thing</h2>
       <v-form ref="form">
         <v-text-field
@@ -66,29 +62,27 @@ import { Todo } from '@/shared/models/todo';
 export default class TodoCEView extends Vue {
   todo: Todo = new Todo();
   data: any[] = [];
-  items = [
-    'personal',
-    'business',
-  ];
+  items = ['personal', 'business'];
 
   get titleRules() {
     return [
       (v: string) => !!v || 'Title is required',
-      (v: string) => (v && v.length <= 100) || 'Title must be less than 100 characters',
+      (v: string) =>
+        (v && v.length <= 100) || 'Title must be less than 100 characters',
     ];
   }
 
   get desRules() {
     return [
       (v: string) => !!v || 'Description is required',
-      (v: string) => (v && v.length <= 255) || 'Description must be less than 255 characters',
+      (v: string) =>
+        (v && v.length <= 255) ||
+        'Description must be less than 255 characters',
     ];
   }
 
   get typeRules() {
-    return [
-      (v: string) => !!v || 'Type is required',
-    ];
+    return [(v: string) => !!v || 'Type is required'];
   }
 
   mounted() {
@@ -98,9 +92,9 @@ export default class TodoCEView extends Vue {
     }
   }
 
-  async saveData () {
-    const form: any = this.$refs.form
-    const valid  = await form.validate();
+  async saveData() {
+    const form: any = this.$refs.form;
+    const valid = await form.validate();
 
     if (!valid) return;
     this.data.push(this.todo.formJSON());
@@ -122,7 +116,8 @@ export default class TodoCEView extends Vue {
   &.v-sheet {
     background: var(--todo-bg-main) !important;
   }
-  label, input {
+  label,
+  input {
     letter-spacing: 0.5px !important;
   }
 
@@ -130,7 +125,8 @@ export default class TodoCEView extends Vue {
     text-transform: capitalize;
   }
 
-  .v-select__selection, input {
+  .v-select__selection,
+  input {
     font-weight: 500;
   }
 
@@ -140,14 +136,20 @@ export default class TodoCEView extends Vue {
   }
 
   &-submit {
-    background-image: linear-gradient(to right, var(--todo-pink), var(--todo-bg-submain), #dd867c, #22b9c7);
+    background-image: linear-gradient(
+      to right,
+      var(--todo-pink),
+      var(--todo-bg-submain),
+      #dd867c,
+      #22b9c7
+    );
     background-size: 300% 100%;
 
     &:hover {
       background-position: 100% 0;
-      -o-transition: all .4s ease-in-out;
-      -webkit-transition: all .4s ease-in-out;
-      transition: all .4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
     }
   }
 

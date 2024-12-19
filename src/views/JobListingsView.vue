@@ -5,10 +5,7 @@
     <div class="px-3 jobs-container">
       <div class="jobs__filter jobs-card" v-if="filters.length">
         <div class="d-flex jobs__filter-list">
-          <div class="jobs__filter-item"
-            v-for="data in filters"
-            :key="data"
-          >
+          <div class="jobs__filter-item" v-for="data in filters" :key="data">
             <p class="jobs__filter-text mb-0">{{ data }}</p>
             <v-btn
               dark
@@ -16,9 +13,7 @@
               class="jobs__filter-close"
               @click="removeFilter(data)"
             >
-              <v-icon dark>
-                mdi-close
-              </v-icon>
+              <v-icon dark> mdi-close </v-icon>
             </v-btn>
           </div>
         </div>
@@ -29,11 +24,11 @@
       <div class="jobs__list">
         <div
           class="jobs__list-item jobs-card mb-10 d-flex"
-          v-for="(item) in jobs"
+          v-for="item in jobs"
           :key="item.id"
         >
           <div class="jobs__avatar mr-3">
-            <img :src="item.image_url" alt="">
+            <img :src="item.image_url" alt="" />
           </div>
 
           <div class="jobs__ctn mr-3">
@@ -154,7 +149,7 @@ export default class JobListingsView extends Vue {
       if (check) {
         newData.push(item);
       }
-    })
+    });
     this.jobs = this.getNewJobs(newData);
   }
 
@@ -226,7 +221,7 @@ $m-bg-tags: #edc3614a;
     &-text {
       padding: 0.5em;
       display: inline-block;
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: $m-txt;
       letter-spacing: 0.5px;
@@ -292,7 +287,7 @@ $m-bg-tags: #edc3614a;
   }
 
   &__availability {
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #7b8e8e;
 
@@ -316,7 +311,7 @@ $m-bg-tags: #edc3614a;
   }
 
   &--remove {
-    animation: remove .5s ease-in-out forwards;
+    animation: remove 0.5s ease-in-out forwards;
   }
 
   @media (max-width: 700px) {

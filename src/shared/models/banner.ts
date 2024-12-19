@@ -14,7 +14,7 @@ export class Banner implements Deserializable<Banner>, BannerInterface {
   description: string = '';
 
   get endTitle() {
-    return this.title.split(' ').pop()
+    return this.title.split(' ').pop();
   }
 
   get newTitle() {

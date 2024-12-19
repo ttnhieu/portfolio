@@ -34,7 +34,7 @@ export class Job implements Deserializable<Job>, JobInterface {
   }
 
   get startAtString() {
-    return moment(this.start_at).fromNow()
+    return moment(this.start_at).fromNow();
   }
 
   deserialize(input: Partial<JobInterface>): Job {

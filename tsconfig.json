@@ -15,9 +15,6 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "noImplicitAny": false,
-    // "skipLibCheck": true,
-    // "forceConsistentCasingInFileNames": true,
-    // "useDefineForClassFields": true,
     "types": [
       "webpack-env",
       "vuetify",

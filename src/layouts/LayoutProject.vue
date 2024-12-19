@@ -12,4 +12,3 @@ import { Vue, Component } from 'vue-property-decorator';
 })
 export default class LayoutProject extends Vue {}
 </script>
-

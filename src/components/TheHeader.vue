@@ -6,32 +6,21 @@
     scroll-target="#scrolling-techniques-7"
     class="header px-md-0 px-4"
   >
-    <img src="@/assets/images/Logo.svg" alt="logo">
+    <img src="@/assets/images/Logo.svg" alt="logo" />
 
     <v-spacer></v-spacer>
 
-    <v-tabs
-      align-with-title
-      class="menu-pc"
-    >
-      <v-tab
-        v-for="item in menu"
-        :key="item.title"
-        :id="`${item.id}`"
-      >
+    <v-tabs align-with-title class="menu-pc">
+      <v-tab v-for="item in menu" :key="item.title" :id="`${item.id}`">
         <!-- <router-link :to="{ name: '', hash: item.id }">
           {{ item.title }}
         </router-link> -->
-        <a :href="item.id" class="d-flex justify-center align-center">
-          {{ item.title }}
-        </a>
+        <a :href="item.id" class="d-flex justify-center align-center">{{
+          item.title
+        }}</a>
       </v-tab>
     </v-tabs>
-    <v-btn
-      icon
-      class="menu-toggle"
-      @click.stop="toggleDrawer()"
-    >
+    <v-btn icon class="menu-toggle" @click.stop="toggleDrawer()">
       <!-- <v-icon>
         {{ icon }}
       </v-icon> -->
@@ -43,7 +32,7 @@
       <v-icon v-else>
         mdi-close
       </v-icon> -->
-      <span class="hamburger" :class="{ 'close': displayMenuSm }">
+      <span class="hamburger" :class="{ close: displayMenuSm }">
         <span class="hamburger-line first"></span>
         <span class="hamburger-line second"></span>
         <span class="hamburger-line third"></span>
@@ -72,10 +61,10 @@ export default class TheHeaderComponent extends Vue {
       icon: 'mdi-magnify',
     },
     {
-      icon: 'mdi-cart-outline'
+      icon: 'mdi-cart-outline',
     },
     {
-      icon: 'mdi-account-outline'
+      icon: 'mdi-account-outline',
     },
   ];
 
@@ -99,9 +88,9 @@ export default class TheHeaderComponent extends Vue {
 .header {
   width: 100%;
   right: unset !important;
-  border-bottom: 1px solid rgba(171, 84, 41, .1) !important;
+  border-bottom: 1px solid rgba(171, 84, 41, 0.1) !important;
   box-shadow: none !important;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
   img {
     height: 30px;
@@ -121,7 +110,7 @@ export default class TheHeaderComponent extends Vue {
       color: var(--black);
       padding: 0 16px;
       font-weight: 500;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     &.active {
@@ -150,7 +139,7 @@ export default class TheHeaderComponent extends Vue {
     transition: all 0.9s ease;
 
     .v-icon {
-      transition: all .9s ease;
+      transition: all 0.9s ease;
     }
   }
 

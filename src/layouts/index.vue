@@ -12,8 +12,8 @@ import LazyLoadService from '@/shared/utils/lazy-load.service';
 @Component({
   name: 'App',
   components: {
-    'LayoutDefault': LazyLoadService.loadLayout('LayoutDefault'),
-    'LayoutProject': LazyLoadService.loadLayout('LayoutProject'),
+    LayoutDefault: LazyLoadService.loadLayout('LayoutDefault'),
+    LayoutProject: LazyLoadService.loadLayout('LayoutProject'),
   },
 })
 export default class App extends Vue {

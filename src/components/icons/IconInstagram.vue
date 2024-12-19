@@ -8,14 +8,38 @@
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     >
-      <mask id="mask0_57_384" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
-        <rect x="0.548706" width="33.4513" height="33.4513" fill="url(#pattern0-ins)" />
+      <mask
+        id="mask0_57_384"
+        style="mask-type: alpha"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="34"
+        height="34"
+      >
+        <rect
+          x="0.548706"
+          width="33.4513"
+          height="33.4513"
+          fill="url(#pattern0-ins)"
+        />
       </mask>
       <g mask="url(#mask0_57_384)">
-        <rect x="-7.8147" y="-5.97852" width="71.6813" height="71.6813" :fill="iconColor" />
+        <rect
+          x="-7.8147"
+          y="-5.97852"
+          width="71.6813"
+          height="71.6813"
+          :fill="iconColor"
+        />
       </g>
       <defs>
-        <pattern id="pattern0-ins" patternContentUnits="objectBoundingBox" width="1" height="1">
+        <pattern
+          id="pattern0-ins"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
           <use xlink:href="#image0_57_384" transform="scale(0.00195312)" />
         </pattern>
         <image

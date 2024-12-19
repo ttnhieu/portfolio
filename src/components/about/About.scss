@@ -12,7 +12,6 @@
       line-height: 1.2;
       margin-top: 5px;
     }
-
     span {
       font-size: 18px;
     }
@@ -20,7 +19,7 @@
 
   &__progress {
     &-bar {
-      background: hsla(40,21%,63%,.2);
+      background: hsla(40, 21%, 63%, 0.2);
       width: 100%;
       min-width: 100%;
       position: relative;
@@ -50,13 +49,13 @@
       font-size: 440px;
       line-height: 335px;
       font-weight: 800;
-      background: url("../../assets/images/year.png");
+      background: url('../../assets/images/year.png');
       background-clip: text;
       color: transparent;
       -webkit-background-clip: text;
       -webkit-text-stroke-width: 6px;
       -webkit-text-stroke-color: #fff;
-      filter: drop-shadow(0 4px 4px rgba(0,0,0,.25));
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
       position: relative;
       z-index: 2;
       left: 10px;
@@ -90,7 +89,7 @@
       font-size: 390px;
       line-height: 190px;
       color: var(--extra-color);
-      filter: drop-shadow(0 4px 4px rgba(0,0,0,.25));
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
       position: relative;
       margin-bottom: 25px;
     }
@@ -198,7 +197,7 @@
       h3 {
         font-size: 200px;
         line-height: 100px;
-        margin-bottom: 5px
+        margin-bottom: 5px;
       }
 
       p {

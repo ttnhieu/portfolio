@@ -8,7 +8,7 @@ export function jsonParse(data: any) {
 }
 
 export function sliceArray(items: any, amount: number) {
-  return items.slice(0, amount)
+  return items.slice(0, amount);
 }
 
 export function isScreenSmall() {
@@ -23,11 +23,10 @@ export function aosDelay(max: number) {
   let item = 0;
   const aosArray = [item];
 
-  for(let i = 1; i < max; i++) {
+  for (let i = 1; i < max; i++) {
     item += 50;
     aosArray.push(item);
   }
 
   return aosArray;
 }
-
