@@ -79,7 +79,7 @@ export default class JobListingsView extends Vue {
       id: 1,
       name: 'Senior Frontend Developer',
       employer_name: 'Photosnap',
-      image_url: require('@/assets/images/job-1.svg'),
+      image_url: require('@/assets/images/jobs/job-1.svg'),
       start_at: '2024-02-26 12:21:51',
       type: 'part_time',
       address: 'USA Only',
@@ -89,7 +89,7 @@ export default class JobListingsView extends Vue {
       id: 2,
       name: 'Junior Frontend Developer',
       employer_name: 'Account',
-      image_url: require('@/assets/images/job-2.svg'),
+      image_url: require('@/assets/images/jobs/job-2.svg'),
       start_at: '2024-02-24 12:21:51',
       type: 'full_time',
       address: 'USA Only',
@@ -99,7 +99,7 @@ export default class JobListingsView extends Vue {
       id: 3,
       name: 'Junior Frontend Developer',
       employer_name: 'MyHome',
-      image_url: require('@/assets/images/job-3.svg'),
+      image_url: require('@/assets/images/jobs/job-3.svg'),
       start_at: '2024-02-23 12:21:51',
       type: 'full_time',
       address: 'USA Only',
@@ -109,7 +109,7 @@ export default class JobListingsView extends Vue {
       id: 4,
       name: 'Junior Developer',
       employer_name: 'Shortly',
-      image_url: require('@/assets/images/job-4.svg'),
+      image_url: require('@/assets/images/jobs/job-4.svg'),
       start_at: '2024-02-22 12:21:51',
       type: 'full_time',
       address: 'USA Only',
@@ -119,7 +119,7 @@ export default class JobListingsView extends Vue {
       id: 5,
       name: 'Junior Frontend Developer',
       employer_name: 'Insure',
-      image_url: require('@/assets/images/job-5.svg'),
+      image_url: require('@/assets/images/jobs/job-5.svg'),
       start_at: '2024-02-21 12:21:51',
       type: 'full_time',
       address: 'USA Only',
@@ -129,7 +129,7 @@ export default class JobListingsView extends Vue {
       id: 6,
       name: 'Front-end Dev',
       employer_name: 'The Air Filter Company',
-      image_url: require('@/assets/images/job-6.svg'),
+      image_url: require('@/assets/images/jobs/job-6.svg'),
       start_at: '2024-02-20 12:21:51',
       type: 'full_time',
       address: 'USA Only',
@@ -196,7 +196,7 @@ $m-bg-tags: #edc3614a;
     background-color: $m-color;
     background-position: center;
     background-size: cover;
-    background-image: url('../assets/images/job-bg-header-3.svg');
+    background-image: url('../assets/images/jobs/job-bg-header.svg');
   }
 
   &__filter {

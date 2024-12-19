@@ -71,7 +71,7 @@ export default class WeatherView extends Vue {
   }
 
   get backgroundImage() {
-    return `url(${require(`@/assets/images/${this.weather.weatherBg}`)})`;
+    return `url(${require(`@/assets/images/weather/${this.weather.weatherBg}`)})`;
   }
 
   async checkWeather() {
@@ -160,7 +160,7 @@ $txt-shadow: #6e606042;
   &.v-card {
     border-radius: 8px;
     box-shadow: 0px 0px 3px -2px rgb(0 0 0 / 60%), 0px 10px 20px 0px rgb(0 0 0 / 30%), 0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important;
-    background-image: url('../assets/images/weather-bg-clear.svg');
+    background-image: url('../assets/images/weather/weather-bg-clear.svg');
     background-position: center;
     background-size: cover;
     position: relative;

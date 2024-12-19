@@ -59,8 +59,6 @@ export default class ExperienceComponent extends Vue {
       sub_title: 'DGWA',
       description:'Development of new features, Maintenance of previous features and functionalities.',
       time: 'Jun 2023 - Present',
-      image_url: require('@/assets/images/1.jpg'),
-      icon_url: require('@/assets/images/be.svg'),
     },
     {
       id: 2,
@@ -68,8 +66,6 @@ export default class ExperienceComponent extends Vue {
       sub_title: 'Neolab',
       description:'Development of websites, templates and new features based on VueJS, NuxtJS and TypeScript, JavaScript, HTML and SCSS.',
       time: 'Apr 2020 - Jun 2023',
-      image_url: require('@/assets/images/1.jpg'),
-      icon_url: require('@/assets/images/be.svg'),
     },
     {
       id: 3,
@@ -77,8 +73,6 @@ export default class ExperienceComponent extends Vue {
       sub_title: 'Neolab',
       description:'Conception and frontend development of the business model. \nProgramming with Angular Framework and TypeScript, Design with HTML and SCSS.',
       time: 'Jun 2018 - Apr 2020',
-      image_url: require('@/assets/images/2.jpg'),
-      icon_url: require('@/assets/images/dribbble.svg'),
     },
     {
       id: 4,
@@ -86,8 +80,6 @@ export default class ExperienceComponent extends Vue {
       sub_title: 'Neolab',
       description:'Developed Responsive Static Website. \nTechnologies: HTML, CSS, Bootstrap, JQuery, Git, Bitbucket.',
       time: 'Dec 2017 - Jun 2018',
-      image_url: require('@/assets/images/3.jpg'),
-      icon_url: require('@/assets/images/instagram.svg'),
     },
   ];
 

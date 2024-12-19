@@ -94,11 +94,16 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import { Todo } from '@/shared/models/todo';
 import moment from 'moment';
+import IconFacebook from '@/components/icons/IconFacebook.vue'
+
+import { Todo } from '@/shared/models/todo';
 
 @Component({
   name: 'TodoView',
+  components: {
+    IconFacebook,
+  }
 })
 export default class TodoView extends Vue {
   todoList: Todo[] = [];
