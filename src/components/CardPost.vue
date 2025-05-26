@@ -60,8 +60,6 @@ export default class CardPostComponent extends Vue {
       window.open(this.item.external_url, '_blank');
     } else if (this.item.route_name) {
       this.$router.push({ name: this.item.route_name });
-    } else {
-      console.warn('No navigation info provided.');
     }
   }
 
