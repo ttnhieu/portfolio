@@ -42,26 +42,74 @@ export default class ProjectsComponent extends Vue {
   data = [
     {
       id: 1,
-      title: 'Todo List',
-      description:
-        'Create a "to-do list" to organize and prioritize your tasks.',
-      image_url: require('@/assets/images/6.jpg'),
-      route_name: 'TodoPage',
+      title: 'Booksyte',
+      description: 'A full-stack appointment booking platform built as a personal project.',
+      detail: `
+        <strong>Description:</strong> <br>
+        A full-stack appointment booking platform built as a personal project. It includes a user-facing interface for scheduling service appointments and an admin dashboard for managing services, users, and bookings. <br>
+        <strong>Frontend:</strong> Next.js, Tailwind CSS, Shadcn UI, FullCalendar, Stripe for payments, Socket.IO<br>
+        <strong>Backend:</strong> Express.js, PostgreSQL<br>
+        <strong>Deployment:</strong> Vercel (frontend), Railway (backend)
+      `,
+      route_name: '',
+      external_url: 'https://booksyte.vercel.app/',
+      image_url: require('@/assets/images/1.jpg'),
     },
     {
       id: 2,
-      title: 'Job Listings with Filtering',
-      description:
-        'Job Listing with Filtering that lists available jobs that can be filtered.',
-      image_url: require('@/assets/images/4.jpg'),
-      route_name: 'JobListingPage',
+      title: 'Portfolio Landing Page',
+      description: 'A modern and responsive personal portfolio theme.',
+      detail: `
+        <strong>Description:</strong> <br>
+        A modern and responsive personal portfolio theme designed to showcase projects, skills, and services. Built with performance and clean design in mind.<br>
+        <strong>Frontend:</strong> Next.js, Tailwind CSS, Shadcn UI<br>
+        <strong>Deployment:</strong> Vercel
+      `,
+      route_name: '',
+      external_url: 'https://theme-land.vercel.app/home',
+      image_url: require('@/assets/images/2.jpg'),
     },
     {
       id: 3,
+      title: 'Trelloway',
+      description: 'A personal project inspired by Trello.',
+      detail: `
+        <strong>Description:</strong> <br>
+        A personal project inspired by Trello. This web app allows users to manage tasks and projects using a Kanban board interface. Users can create boards, lists, and drag-and-drop cards to track progress efficiently.<br>
+        <strong>Frontend:</strong> React, MUI (Material UI), Vite<br>
+        <strong>Backend:</strong> Express.js, MongoDB<br>
+        <strong>Deployment:</strong> Vercel (frontend), Render (backend)
+      `,
+      route_name: '',
+      external_url: 'https://trelloway.vercel.app/',
+      image_url: require('@/assets/images/3.jpg'),
+    },
+    {
+      id: 4,
+      title: 'Todo List',
+      description: 'Create a "to-do list" to organize and prioritize your tasks.',
+      detail: ``,
+      route_name: 'TodoPage',
+      external_url: '',
+      image_url: require('@/assets/images/4.jpg'),
+    },
+    {
+      id: 5,
+      title: 'Job Listings with Filtering',
+      description: 'Job Listing with Filtering that lists available jobs that can be filtered.',
+      detail: ``,
+      route_name: 'JobListingPage',
+      external_url: '',
+      image_url: require('@/assets/images/5.jpg'),
+    },
+    {
+      id: 6,
       title: 'Weather App',
       description: 'Weather information and forecast.',
-      image_url: require('@/assets/images/5.jpg'),
+      detail: ``,
       route_name: 'WeatherPage',
+      external_url: '',
+      image_url: require('@/assets/images/6.jpg'),
     },
   ];
 

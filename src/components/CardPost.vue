@@ -1,21 +1,40 @@
 <template>
-  <v-card class="s-card-post" outlined tile>
-    <router-link :to="{ name: item.route_name }" target="_blank">
-      <div class="s-card-post__cover">
-        <img
-          class="s-card-post__img s-img--cover"
-          alt="product"
-          :src="item.image_url"
-        />
-      </div>
-
+  <v-hover v-slot="{ hover }">
+    <v-card class="s-card-post rounded-xl" outlined tile color="grey lighten-4">
+      <v-img
+        class="s-card-post__cover s-card-post__img s-img--cover"
+        alt="product"
+        :src="item.image_url"
+      >
+        <v-expand-transition>
+          <div
+            v-if="hover && item.detail"
+            class="s-card-post__overlay d-flex transition-fast-in-fast-out darken-2"
+            style="height: 100%"
+          >
+            <p class="px-4" v-html="item.detail"></p>
+          </div>
+        </v-expand-transition>
+      </v-img>
       <v-card-text class="black--text s-card-post__text">
+        <v-btn
+          fab
+          small
+          right
+          top
+          absolute
+          color="var(--extra-color)"
+          class="white--text"
+          @click="handleProjectNavigation"
+        >
+          <v-icon>mdi-link</v-icon>
+        </v-btn>
         <h2 class="primary--text s-card-post__title">{{ item.title }}</h2>
-        <p class="s-card-post__des mb-0">{{ item.description }}</p>
+        <p class="s-card-post__des mb-0" v-html="item.description"></p>
         <img class="hover" src="@/assets/images/vector5.svg" alt="" />
       </v-card-text>
-    </router-link>
-  </v-card>
+    </v-card>
+  </v-hover>
 </template>
 
 <script lang="ts">
@@ -27,12 +46,27 @@ import { PRODUCT_ACTION } from '@/shared/constants/product';
   name: 'CardPostComponent',
 })
 export default class CardPostComponent extends Vue {
-  @Prop() item: Product;
+  @Prop() item: any;
   @Prop() height: Number;
   actions = PRODUCT_ACTION;
+  hover = false;
 
   get heightImg() {
     return this.height || 350;
+  }
+
+  handleProjectNavigation() {
+    if (this.item.external_url) {
+      window.open(this.item.external_url, '_blank');
+    } else if (this.item.route_name) {
+      this.$router.push({ name: this.item.route_name });
+    } else {
+      console.warn('No navigation info provided.');
+    }
+  }
+
+  handleViewDetail() {
+    this.hover = true;
   }
 }
 </script>
@@ -40,6 +74,9 @@ export default class CardPostComponent extends Vue {
 .s-card-post {
   cursor: pointer;
   border: none !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 20px hsla(39, 9%, 71%, 0.3);
 
   &:hover {
     .s-card-post__title {
@@ -55,8 +92,6 @@ export default class CardPostComponent extends Vue {
 
   &__img {
     height: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
   }
 
   &__cover {
@@ -71,11 +106,9 @@ export default class CardPostComponent extends Vue {
   }
 
   &__text {
+    position: relative;
     background-color: #f8f5ef;
-    box-shadow: 0 14px 20px hsla(39, 9%, 71%, 0.3);
     padding: 20px 30px 28px 50px;
-    border-bottom-left-radius: 10px !important;
-    border-bottom-right-radius: 10px !important;
   }
 
   &__title {
@@ -111,6 +144,16 @@ export default class CardPostComponent extends Vue {
     opacity: 0.5;
     margin-top: 5px;
     height: 42px;
+  }
+
+  &__overlay {
+    background-color: #faceb1;
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    opacity: 0.7;
+    position: absolute;
+    width: 100%;
   }
 
   a {

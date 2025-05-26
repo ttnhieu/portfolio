@@ -86,38 +86,58 @@ export default class SkillsComponent extends Vue {
     },
     {
       id: 8,
+      name: 'Shadcn UI',
+      image_url: require('@/assets/images/skills/skill-shadcn.png'),
+    },
+    {
+      id: 9,
       name: 'Javascript',
       image_url: require('@/assets/images/skills/skill-js.svg'),
     },
     {
-      id: 9,
+      id: 10,
       name: 'Typescript',
       image_url: require('@/assets/images/skills/skill-ts.svg'),
     },
     {
-      id: 10,
+      id: 11,
       name: 'Nodejs',
       image_url: require('@/assets/images/skills/skill-node.svg'),
     },
     {
-      id: 11,
+      id: 12,
       name: 'Angular',
       image_url: require('@/assets/images/skills/skill-angular.svg'),
     },
     {
-      id: 12,
+      id: 13,
       name: 'Vuejs',
       image_url: require('@/assets/images/skills/skill-vue.svg'),
     },
     {
-      id: 13,
+      id: 14,
       name: 'Nuxtjs',
       image_url: require('@/assets/images/skills/skill-nuxt.svg'),
     },
     {
-      id: 14,
+      id: 15,
+      name: 'Reactjs',
+      image_url: require('@/assets/images/skills/skill-react.svg'),
+    },
+    {
+      id: 16,
+      name: 'Nextjs',
+      image_url: require('@/assets/images/skills/skill-nextjs.svg'),
+    },
+    {
+      id: 17,
       name: 'Git',
       image_url: require('@/assets/images/skills/skill-git.svg'),
+    },
+    {
+      id: 18,
+      name: 'Vite',
+      image_url: require('@/assets/images/skills/skill-vite.svg'),
     },
   ];
 

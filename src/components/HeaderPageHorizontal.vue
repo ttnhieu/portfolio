@@ -1,5 +1,5 @@
 <template>
-  <div class="page-title-horizontal d-flex px-4">
+  <div class="page-title-horizontal d-flex align-end px-4">
     <div class="main-title">
       <span>{{ title }}</span>
       <h3 class="title-font">{{ subTitle }}</h3>
