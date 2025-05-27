@@ -39,7 +39,6 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import { Product } from '@/shared/models/product';
 import { PRODUCT_ACTION } from '@/shared/constants/product';
 
 @Component({
