@@ -35,14 +35,16 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import LazyLoadService from '@/shared/utils/lazy-load.service';
+
+import HeaderPageHorizontal from '@/components/HeaderPageHorizontal.vue';
+
 import { Product } from '@/shared/models/product';
 import { aosDelay } from '@/shared/utils/helper';
 
 @Component({
   name: 'SkillsComponent',
   components: {
-    HeaderPageHorizontal: LazyLoadService.loadComponent('HeaderPageHorizontal'),
+    HeaderPageHorizontal,
   },
 })
 export default class SkillsComponent extends Vue {

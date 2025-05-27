@@ -9,8 +9,8 @@
     <v-row no-gutters>
       <v-col
         v-for="(item, index) in products"
-        data-aos="fade-up"
         :key="item.id"
+        data-aos="fade-up"
         :data-aos-delay="aosDelayTime(index)"
         :data-aos-duration="1000"
         sm="6"
@@ -26,14 +26,16 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import LazyLoadService from '@/shared/utils/lazy-load.service';
+
+import CardPost from '@/components/CardPost.vue';
+
 import { Product } from '@/shared/models/product';
 import { aosDelay } from '@/shared/utils/helper';
 
 @Component({
   name: 'ProjectsComponent',
   components: {
-    CardPost: LazyLoadService.loadComponent('CardPost'),
+    CardPost
   },
 })
 export default class ProjectsComponent extends Vue {
